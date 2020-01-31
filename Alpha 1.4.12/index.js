@@ -1,31 +1,32 @@
-var cooldown8ball = new Set() // 10s
-var cooldownapi = new Set() // 15s
-var cooldownban = new Set() // 5s
-var cooldowncat = new Set() // 2s
-var cooldownchannel = new Set() // 5s
-var cooldowncoinflip = new Set() // 0.8s
-var cooldowncreateguild = new Set() // 1min
-var cooldowncredits = new Set() // 3s
-var cooldowndac = new Set() // 30s
-var cooldowndevpanel = new Set() // 0.8s
-var cooldowndog = new Set() // 2s
-var cooldownembed = new Set() // 5s
-var cooldownhelp = new Set() // 0.8s
-var cooldownhowgay = new Set() // 0.8s
-var cooldownkick = new Set() // 5s
-var cooldownluck = new Set() // 0.8s
-var cooldownping = new Set() // 2s
-var cooldownprefix = new Set() // 10s
-var cooldownpurge = new Set() // 10s
-var cooldownrandomstring = new Set() // 5s
-var cooldownrolldie = new Set() // 0.8s
-var cooldownrps = new Set() // 0.8s
-var cooldownsetactivity = new Set() // 12s
-var cooldownslowmode = new Set() // 5s
-var cooldownspam = new Set() // 5min
-var cooldowntime = new Set() // 0.8s
-var cooldownuserinfo = new Set() // 3s
-var cooldownversion = new Set() // 3s
+'use strict'
+const cooldown8ball = new Set() // 10s
+const cooldownapi = new Set() // 15s
+const cooldownban = new Set() // 5s
+const cooldowncat = new Set() // 2s
+const cooldownchannel = new Set() // 5s
+const cooldowncoinflip = new Set() // 0.8s
+const cooldowncreateguild = new Set() // 1min
+const cooldowncredits = new Set() // 3s
+const cooldowndac = new Set() // 30s
+const cooldowndevpanel = new Set() // 0.8s
+const cooldowndog = new Set() // 2s
+const cooldownembed = new Set() // 5s
+const cooldownhelp = new Set() // 0.8s
+const cooldownhowgay = new Set() // 0.8s
+const cooldownkick = new Set() // 5s
+const cooldownluck = new Set() // 0.8s
+const cooldownping = new Set() // 2s
+const cooldownprefix = new Set() // 10s
+const cooldownpurge = new Set() // 10s
+const cooldownrandomstring = new Set() // 5s
+const cooldownrolldie = new Set() // 0.8s
+const cooldownrps = new Set() // 0.8s
+const cooldownsetactivity = new Set() // 12s
+const cooldownslowmode = new Set() // 5s
+const cooldownspam = new Set() // 5min
+const cooldowntime = new Set() // 0.8s
+const cooldownuserinfo = new Set() // 3s
+const cooldownversion = new Set() // 3s
 
 
 
@@ -45,7 +46,7 @@ for (const file of commandFiles) {
 
 const prefix = ">>";
 
-var prefixes = require('./data/prefixes.json');
+let prefixes = require('./data/prefixes.json');
 
 bot.on('ready', () => {
   console.log(`Bot has started!`)
@@ -82,7 +83,7 @@ if (!message.guild) return;
   const command = args[0].toLowerCase()
 
   function sendEmbed(a,b,c) {
-  var embed = new discord.RichEmbed()
+  const embed = new discord.RichEmbed()
    .setColor("#" + a)
    .setTitle(b)
    .setDescription(c)
@@ -90,7 +91,7 @@ if (!message.guild) return;
    }
 
    function sendErrorEmbed(a) {
-    var embed = new discord.RichEmbed()
+    const embed = new discord.RichEmbed()
      .setColor("#ff0000")
      .setTitle("Technical Issue")
      .setDescription(a)
@@ -98,7 +99,7 @@ if (!message.guild) return;
    }
 
 	 function sendSuccessfulAction(a) {
-		 var embed = new discord.RichEmbed()
+		 const embed = new discord.RichEmbed()
 		 	.setColor("#00ff00")
 			.setTitle("Successful Action")
 			.setDescription(a)
@@ -106,7 +107,7 @@ if (!message.guild) return;
 	 }
 
 	 function sendUnsuccessfulAction(a) {
-		 var embed = new discord.RichEmbed()
+		 const embed = new discord.RichEmbed()
 			.setColor("#ff0000")
 			.setTitle("Unsuccessful Action")
 			.setDescription(a)
